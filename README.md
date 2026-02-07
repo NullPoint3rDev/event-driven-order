@@ -94,7 +94,7 @@ sequenceDiagram
 **Prerequisites:** Docker and Docker Compose.
 
 ```bash
-git clone <repo-url>
+git clone <https://github.com/NullPoint3rDev/event-driven-order.git>
 cd "event-driven order"
 docker compose up -d --build
 ```
