@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "api-rate-limiter"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["localhost:8080"]
+
+  - job_name: "event-driven-order"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets:
+          - "localhost:8081"   # order-api
+          - "localhost:8082"  # order-validator
+          - "localhost:8083"  # inventory-service
+          - "localhost:8084"  # payment-service
+          - "localhost:8085"  # notification-service
